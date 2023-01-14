@@ -15,7 +15,7 @@ body {
 }
 
 main {
-  margin-top:0 ;
+  margin-top: 0;
   margin-bottom: 0;
   border-radius: 15px;
   position: absolute;
@@ -32,17 +32,17 @@ main {
 .boxmessage {
   font-size: 30px;
   display: flex;
-    align-items: center;
+  align-items: center;
 }
 
 #message {
   border: solid black;
   border-radius: 15px;
-width: 300px;
-height: 50px;
-text-align: center;
-font-size: 20px;
-background-color: rgb(0, 225, 255);
+  width: 300px;
+  height: 50px;
+  text-align: center;
+  font-size: 20px;
+  background-color: rgb(0, 225, 255);
 }
 
 .header {
@@ -52,14 +52,14 @@ background-color: rgb(0, 225, 255);
   width: 75vw;
   height: 123px;
   position: absolute;
-    top: 0;
-    margin-top: 7px;
-    width: 75vw;
-    height: 123px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: wrap;
+  top: 0;
+  margin-top: 7px;
+  width: 75vw;
+  height: 123px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .playeurs {
@@ -71,17 +71,18 @@ background-color: rgb(0, 225, 255);
 }
 
 #pl1 {
-  margin-right: 160px;
+  margin-right: 100px;
 }
 
 #pl2 {
-  margin-left: 160px;
+  margin-left: 100px;
 }
 
-#player1-total-score, #player2-total-score {
+#player1-total-score,
+#player2-total-score {
   margin-top: 15px;
   border-radius: 15px;
-  width:150px;
+  width: 150px;
   height: 50px;
   background-color: aqua;
 }
@@ -102,25 +103,33 @@ background-color: rgb(0, 225, 255);
   border-radius: 55px;
   position: fixed;
   top: 700px;
-  width: 1230px
+  width: 1230px;
 }
 
-.boxcourant1, .boxcourant2 {
-  
+.boxcourant1,
+.boxcourant2 {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  margin-top: 17px;
 }
 
+#courant1,
+courant1 {
+  font-size: 21px;
+  text-align: center;
+}
 
-#player1-round-score, #player2-round-score {
+#player1-round-score,
+#player2-round-score {
   border-radius: 15px;
-  width:150px;
+  width: 150px;
   height: 50px;
+  margin-top: 30px;
   background-color: aqua;
 }
-
 
 #play {
   display: flex;
@@ -128,7 +137,6 @@ background-color: rgb(0, 225, 255);
   align-content: center;
   justify-content: center;
   text-align: center;
-  
 }
 
 img#new-game-button {
@@ -151,7 +159,7 @@ h1 {
   position: absolute;
   top: 120px;
   display: flex;
-  justify-content:center;
+  justify-content: center;
   background-color: green;
   width: 40vw;
   border-radius: 25px;
@@ -159,10 +167,8 @@ h1 {
 }
 
 img.style {
-  
-    width: 55vw;
-    height: 50vh;
-
+  width: 55vw;
+  height: 50vh;
 }
 
 main {
@@ -201,7 +207,7 @@ h2 {
   margin-left: 360px;
 }
 
-.roll-dice{
+.roll-dice {
   cursor: pointer;
   font-size: 27px;
 }
@@ -210,7 +216,6 @@ h2 {
   display: flex;
   justify-content: center;
 }
-
 
 .style {
   cursor: pointer;
@@ -226,23 +231,88 @@ h2 {
   text-shadow: 1px 1px 1px #000;
   border-radius: 10px;
   background-color: rgb(218, 198, 20);
-  background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
-  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+  background-image: linear-gradient(
+    to top left,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.2) 30%,
+    rgba(0, 0, 0, 0)
+  );
+  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6),
+    inset -2px -2px 3px rgba(0, 0, 0, 0.6);
 }
 
 .style:hover {
-  
   background-color: rgb(255, 251, 0);
 }
 
 .style {
-  box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6), inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+  box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+    inset 2px 2px 3px rgba(0, 0, 0, 0.6);
 }
 
-@media screen and (max-width: 960px) {
-
+@media screen and (max-width: 1584px) {
   .header {
-    
+    position: absolute;
+    top: -63px;
+    flex-direction: column;
+    width: 300px;
+    height: 348px;
+    justify-content: center;
+    align-content: center;
   }
 
+  img#new-game-button {
+    width: 75px;
+    top: 63px;
+    left: 113px;
+  }
+
+  .boxmessage {
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  #message {
+    position: relative;
+    top: 10px;
+    width: 220px;
+  }
+
+  .playeurs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  img#dé {
+    display: none;
+    /* width: 110px;
+    position: absolute;
+    left: 159px;
+    top: 132px; */
+  }
+
+  .groupeLance {
+    display: flex;
+    flex-direction: row;
+    width: 533px;
+    height: 245px;
+  }
+
+  #player1-round-score,
+  #player2-round-score {
+    width: 134px;
+    height: 37px;
+  }
+
+  #roll-dice-button {
+    cursor: pointer;
+    font-size: 19px;
+    position: absolute;
+    top: 30px;
+    left: 124px;
+  }
 }
