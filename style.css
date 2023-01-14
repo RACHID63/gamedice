@@ -1,0 +1,248 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  margin-top:0 ;
+  margin-bottom: 0;
+  border-radius: 15px;
+  position: absolute;
+  background-color: rgb(135 165 90);
+  width: 75vw;
+  height: 100vh;
+  box-shadow: -6px 6px 6px 0px #2823238f;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.boxmessage {
+  font-size: 30px;
+  display: flex;
+    align-items: center;
+}
+
+#message {
+  border: solid black;
+  border-radius: 15px;
+width: 300px;
+height: 50px;
+text-align: center;
+font-size: 20px;
+background-color: rgb(0, 225, 255);
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  margin-top: 15px;
+  width: 75vw;
+  height: 123px;
+  position: absolute;
+    top: 0;
+    margin-top: 7px;
+    width: 75vw;
+    height: 123px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.playeurs {
+  position: absolute;
+  top: 260px;
+  width: 349px;
+  height: 216px;
+  width: 100%;
+}
+
+#pl1 {
+  margin-right: 160px;
+}
+
+#pl2 {
+  margin-left: 160px;
+}
+
+#player1-total-score, #player2-total-score {
+  margin-top: 15px;
+  border-radius: 15px;
+  width:150px;
+  height: 50px;
+  background-color: aqua;
+}
+
+.playeurs,
+.groupeLance {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.groupeLance {
+  height: 150px;
+  background-color: hsla(6, 81%, 50%, 1);
+  border: solid whitesmoke 2px;
+  box-shadow: -9px 8px 0 rgb(74, 75, 73);
+  border-radius: 55px;
+  position: fixed;
+  top: 700px;
+  width: 1230px
+}
+
+.boxcourant1, .boxcourant2 {
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+#player1-round-score, #player2-round-score {
+  border-radius: 15px;
+  width:150px;
+  height: 50px;
+  background-color: aqua;
+}
+
+
+#play {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  
+}
+
+img#new-game-button {
+  cursor: pointer;
+  position: absolute;
+  border-top: 0;
+  width: 108px;
+  border: solid 5px;
+  border-radius: 50%;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 35px;
+  font-size: 2rem;
+  margin-left: 25rem;
+}
+
+#tapisdécoration {
+  position: absolute;
+  top: 120px;
+  display: flex;
+  justify-content:center;
+  background-color: green;
+  width: 40vw;
+  border-radius: 25px;
+  border: solid 2px;
+}
+
+img.style {
+  
+    width: 55vw;
+    height: 50vh;
+
+}
+
+main {
+  background: rgb(73, 118, 5);
+  border: solid 5px;
+  width: 75vw;
+  height: 80vh;
+  /* background: rgba(0, 0, 255, 0.219); */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+img#dé {
+  width: 250px;
+  border: solid 5px;
+  border-radius: 50%;
+}
+
+.fa-solid,
+.fas {
+  font-weight: 900;
+  font-size: 36px;
+  margin-left: 29px;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+.Courant1 {
+  margin-right: 360px;
+}
+
+.Courant2 {
+  margin-left: 360px;
+}
+
+.roll-dice{
+  cursor: pointer;
+  font-size: 27px;
+}
+
+.boxbutton {
+  display: flex;
+  justify-content: center;
+}
+
+
+.style {
+  cursor: pointer;
+  width: 80px;
+  height: 55px;
+  border: 0;
+  line-height: 2.5;
+  padding: 0 20px;
+  font-size: 1.5rem;
+  text-align: center;
+  align-items: center;
+  color: rgb(24, 71, 154);
+  text-shadow: 1px 1px 1px #000;
+  border-radius: 10px;
+  background-color: rgb(218, 198, 20);
+  background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
+  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+}
+
+.style:hover {
+  
+  background-color: rgb(255, 251, 0);
+}
+
+.style {
+  box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6), inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+}
+
+@media screen and (max-width: 960px) {
+
+  .header {
+    
+  }
+
+}

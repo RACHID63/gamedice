@@ -1,0 +1,15 @@
+ 
+
+
+Règles :
+Le jeu comprend 2 joueurs sur un seul et même écran.
+Chaque joueur possède un score temporaire (ROUND) et un score global (GLOBAL).
+À chaque tour, le joueur a son ROUND initialisé à 0 et peut lancer un dé autant de fois qu'il le souhaite. Le
+résultat d’un lancer est ajouté au ROUND est affecté dans une variable currentPlayer1 pour le joueur PLAYER 1 et currentPlayer2 pour le joueur PLAYER 2 .
+Lors de son tour, le joueur peut décider à tout moment de:
+- Cliquer sur l’option  “Hold”, qui permet d’envoyer les points du currentPlayer1 vers le GLOBAL1 ou du currentPlayer1 vers le GLOBAL1. Ce sera alors le
+tour de l’autre joueur.
+- Lancer le dé. S’il obtient un 1, son score ROUND1 ou ROUND1 est perdu et c’est la fin de son tour.
+Le premier joueur qui atteint les 100 points sur global gagne le jeu. pour l'interface html : elle sera rectangulaire en haut du rectangle 
+au milieu un bouton nommé New game en dessous a gauche PLAYER 1 et à droite E PLAYER 2 sous PLAYER 1 et PLAYER 2 les total scores ROUND1 
+affiché sous  PLAYER 1 et ROUND2 affiché sous  PLAYER 2. un bouton lancé de dé. entre PLAYER 1 et PLAYER 2 il y a une image d'un dé.
