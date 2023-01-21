@@ -4,14 +4,50 @@
   padding: 0;
   font-family: "Poppins", sans-serif;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 16px;
 }
 
 body {
+  background: radial-gradient(rgb(212, 255, 0), rgb(215, 137, 137));
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.joueurs {
+  width: 392px;
+  height: 80px;
+  border-radius: 10px;
+  background-color: rgb(255, 106, 0);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: solid 3px black;
+  position: absolute;
+  top: 10px;
+}
+
+/* .joueursSelectionner {
+position: relative;
+top: 12px;
+  background-color: rgb(58, 111, 225);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+/* p {
+  color: antiquewhite;
+  text-align: center;
+  width: 357px;
+} */
+
+#info,
+#info1 {
+  width: 360px;
+  height: 33px;
 }
 
 main {
@@ -30,7 +66,8 @@ main {
 }
 
 .boxmessage {
-  font-size: 30px;
+
+  font-size: 1.5em;
   display: flex;
   align-items: center;
 }
@@ -43,6 +80,9 @@ main {
   text-align: center;
   font-size: 20px;
   background-color: rgb(0, 225, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .header {
@@ -77,6 +117,17 @@ main {
 #pl2 {
   margin-left: 100px;
 }
+
+#pl1, #pl2 {
+  text-align: center;
+}
+
+#namePlayeur1,#namePlayer2 {
+  font-size:1.6em;
+  font-weight: 900;
+}
+
+
 
 #player1-total-score,
 #player2-total-score {
@@ -129,6 +180,9 @@ courant1 {
   height: 50px;
   margin-top: 30px;
   background-color: aqua;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #play {
@@ -196,7 +250,9 @@ img#dé {
 }
 
 h2 {
-  font-size: 2rem;
+  text-align:center;
+ color: rgb(19, 19, 2);
+  font-size: 1.5 em;
 }
 
 .Courant1 {
@@ -272,7 +328,7 @@ h2 {
   }
 
   .boxmessage {
-    font-size: 28px;
+    font-size: 5.1em;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -345,7 +401,7 @@ h2 {
   #roll-dice-button,
   .boxmessage {
     margin-bottom: 1px;
-    font-size: 16px;
+    font-size: 1.5em;
     text-align: center;
   }
 
@@ -376,7 +432,7 @@ h2 {
   }
 }
 
-@media screen and  (max-width: 1280px)  and (orientation: landscape) {
+@media screen and (max-width: 1280px) and (orientation: landscape) {
   .header {
     position: absolute;
     top: -43px;
@@ -394,7 +450,7 @@ h2 {
   img#new-game-button {
     width: 75px;
     top: 45px;
-    left:70px;
+    left: 70px;
   }
 
   .playeurs {
@@ -404,7 +460,6 @@ h2 {
     align-items: center;
     position: absolute;
     top: 0px;
-   
   }
 
   #pl1,
@@ -412,7 +467,6 @@ h2 {
     margin: 0px;
     width: 120px;
     height: 30px;
-    
   }
 
   #pl1 {
@@ -429,8 +483,9 @@ h2 {
   h2,
   #player1-total-score,
   #player2-total-score,
-  #roll-dice-button,#player1-round-score, #player2-round-score
-  {
+  #roll-dice-button,
+  #player1-round-score,
+  #player2-round-score {
     margin-top: 0;
     font-size: 16px;
     text-align: center;
@@ -447,7 +502,8 @@ h2 {
     top: 145px;
   }
 
-  #Courant1, #Courant2 {
+  #Courant1,
+  #Courant2 {
     margin-bottom: 15px;
   }
 

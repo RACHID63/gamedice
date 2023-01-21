@@ -1,66 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/f6a18e5345.js" crossorigin="anonymous"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/f6a18e5345.js"
+      crossorigin="anonymous"
+    ></script>
     <title>jeu de dé 2 joueurs</title>
-</head>
-<body>
+  </head>
+  <body>
+    <section class="joueurs">
+            <h2>Playeurs</h2>
+      <div>
+          <div class="box">
+            <!-- <label for="joueurActif-1">Nom du joueur actif-1:</label> -->
+            <input type="text" id="joueur1" name="joueurActif1" placeholder="entré votre Nom"/>
+            <button type="submit" id="validerJoueurActif1">VALIDER JOUEUR 1</button>
+          </div>
+          <div>
+            <!-- <label for="joueurActif-2">Nom du joueur actif-2:</label> -->
+            <input type="text" id="joueur2" name="joueurActif2" placeholder="entré votre Nom" />
+            <button type="submit" id="validerJoueurActif2">VALIDER JOUEUR 2</button>
+          </div>
+      </div>
+      <!-- <div class="joueursSelectionner">
+        <p> JOUEUR N°1: <span id="info"></span></p>
+        <p>JOUEUR N°2: <span id="info1"></span></p>
+      </div> -->
+  </section>
     <main>
-        <div id="tapisdécoration">
-            <img class="style" src="./images/decoration.svg" alt="">
+      <div id="tapisdécoration">
+        <img class="style" src="./images/decoration.svg" alt="" />
+      </div>
+      <div class="container-sm header">
+        <div class="containers-sm">
+          <img id="new-game-button" src="./images/nouveau jeu.jfif" alt="" />
         </div>
-        <div  class="container-sm   header">
-            <div class="containers-sm">
-                <img id="new-game-button" src="./images/nouveau jeu.jfif" alt="">
-            </div>
-            <div  class=" container-sm boxmessage">
-                Info-Message : <span id="message"></span> 
-              </div>
+        <div class="container-sm boxmessage">
+          Info-Message : <span id="message"></span>
         </div>
-        <div>
+      </div>
+      <div></div>
+      <div class="playeurs">
+        <div id="pl1">
+          <!-- <h2 class="namePlayer">PLAYER 1</h2> -->
+          <span id="namePlayer1"></span>
+          <div id="player1-total-score"></div>
         </div>
-        <div class=" playeurs">
-            <div  id="pl1" >
-                <h2 >PLAYER 1</h2>
-                <div id="player1-total-score"></div>
-            </div>
-            <div  id="play">
-                <img id="dé" src="./images/dé.jfif" alt="2 dés">
-
-            </div>
-            <div id="pl2">
-                <h2 >PLAYER 2</h2>
-                <div id="player2-total-score"></div>
-                
-            </div>
+        <div id="play">
+          <img id="dé" src="./images/dé.jfif" alt="2 dés" />
         </div>
-        <div class=" containers  groupeLance">
-            <div class=" containers-sm  boxcourant1">
-                <h2 id="Courant1">
-                    Score courant 1
-                </h2>
-                <div id="player1-round-score"></div>
-            </div >
-            <a class=" container-sm   roll-dice" id="roll-dice-button">Lancer dé <i class="fa-sharp fa-solid fa-play"></i></a>
-            <div class=" container-sm boxcourant2">
-                <h2 id="Courant2">
-                    Score courant 2
-                </h2>
-                <div id="player2-round-score"></div>
-            </div>
-            <div class="boxbutton" >
-                <input id="hold-button" class="style" type="button" value="hold">
-            </div>
+        <div id="pl2">
+          <!-- <h2 class="nameplayer2">PLAYER 2</h2> -->
+          <span id="namePlayer2"></span>
+          <div id="player2-total-score"></div>
         </div>
+      </div>
+      <div class="containers groupeLance">
+        <div class="containers-sm boxcourant1">
+          <h2 id="Courant1">Score courant 1</h2>
+          <div id="player1-round-score"></div>
+        </div>
+        <a class="container-sm roll-dice" id="roll-dice-button"
+          >Lancer dé <i class="fa-sharp fa-solid fa-play"></i
+        ></a>
+        <div class="container-sm boxcourant2">
+          <h2 id="Courant2">Score courant 2</h2>
+          <div id="player2-round-score"></div>
+        </div>
+        <div class="boxbutton">
+          <input id="hold-button" class="style" type="button" value="hold" />
+        </div>
+      </div>
     </main>
-<script src="./Players-dice.js" ></script>
-
-
-</body>
-
+    <script src="./javascript.js"></script>
+  </body>
 </html>
