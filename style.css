@@ -29,21 +29,6 @@ body {
   top: 10px;
 }
 
-/* .joueursSelectionner {
-position: relative;
-top: 12px;
-  background-color: rgb(58, 111, 225);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
-
-/* p {
-  color: antiquewhite;
-  text-align: center;
-  width: 357px;
-} */
-
 #info,
 #info1 {
   width: 360px;
@@ -100,6 +85,22 @@ span#message {
   flex-direction: row;
   justify-content: space-around;
   flex-wrap: wrap;
+  align-items: center;
+}
+
+.newGameButton {
+  cursor: pointer;
+  height: 50px;
+  width: 200px;
+  background:rgb(204, 84, 0) ;
+  border-radius: 10px;
+  font-size: 1.5em;
+  
+}
+
+.newGameButton:hover {
+  background:green;
+color: whitesmoke;
 }
 
 .playeurs {
@@ -136,6 +137,9 @@ span#message {
   width: 150px;
   height: 50px;
   background-color: aqua;
+  display: flex;
+  justify-content: center;
+  flex-direction: column  
 }
 
 .playeurs,

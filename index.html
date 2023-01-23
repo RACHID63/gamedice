@@ -26,19 +26,16 @@
             <button type="submit" id="validerJoueurActif2">VALIDER JOUEUR 2</button>
           </div>
       </div>
-      <!-- <div class="joueursSelectionner">
-        <p> JOUEUR N°1: <span id="info"></span></p>
-        <p>JOUEUR N°2: <span id="info1"></span></p>
-      </div> -->
-  </section>
+    </section>
     <main>
       <div id="tapisdécoration">
         <img class="style" src="./images/decoration.svg" alt="" />
       </div>
-      <div class="container-sm header">
-        <div class="containers-sm">
+      <div class=" header">
+        <!-- <div >
           <img id="new-game-button" src="./images/nouveau jeu.jfif" alt="" />
-        </div>
+        </div> -->
+        <button type="submit" class="newGameButton">newGame</button>
         <div class="container-sm boxmessage">
           Info-Message : <span id="message"></span>
         </div>
@@ -46,11 +43,22 @@
       <div></div>
       <div class="playeurs">
         <div id="pl1">
-          <!-- <h2 class="namePlayer">PLAYER 1</h2> -->
           <span id="namePlayer1"></span>
           <div id="player1-total-score"></div>
         </div>
         <div id="play">
+          <div id="twinScrores">
+            <div class="boxScore">
+                <b class="titreScore">SCORE 1</b>  
+               <div id="score-table" ></div>
+                <button  id="inject-table" type="submit">click les scores</button>
+            </div>
+            <div class="boxScore">
+                <b class="titreScore">SCORE 2</b>  
+               <div id="score-table2" ></div>
+                <button id="inject-table2" type="submit">click les scores</button>
+            </div>
+        </div>
           <img id="dé" src="./images/dé.jfif" alt="2 dés" />
         </div>
         <div id="pl2">
