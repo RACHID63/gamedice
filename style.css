@@ -16,8 +16,12 @@ body {
 }
 
 .joueurs {
+  position: relative;
+  top: 87px;
+  left: 250px;
+  z-index: 100;
   width: 392px;
-  height: 80px;
+  height: 100px;
   border-radius: 10px;
   background-color: rgb(255, 106, 0);
   display: flex;
@@ -26,7 +30,6 @@ body {
   align-items: center;
   border: solid 3px black;
   position: absolute;
-  top: 10px;
 }
 
 #info,
@@ -35,7 +38,7 @@ body {
   height: 33px;
 }
 
-main {
+.tapis {
   margin-top: 0;
   margin-bottom: 0;
   border-radius: 15px;
@@ -51,7 +54,6 @@ main {
 }
 
 .boxmessage {
-
   font-size: 1.5em;
   display: flex;
   align-items: center;
@@ -89,18 +91,20 @@ span#message {
 }
 
 .newGameButton {
+  position: relative;
+  left: -86px;
+  top: -15px;
   cursor: pointer;
   height: 50px;
   width: 200px;
-  background:rgb(204, 84, 0) ;
+  background: rgb(204, 84, 0);
   border-radius: 10px;
   font-size: 1.5em;
-  
 }
 
 .newGameButton:hover {
-  background:green;
-color: whitesmoke;
+  background: green;
+  color: whitesmoke;
 }
 
 .playeurs {
@@ -111,35 +115,64 @@ color: whitesmoke;
   width: 100%;
 }
 
-#pl1 {
-  margin-right: 100px;
+.tot1 {
+  position: relative;
+ right: 200px;
 }
 
-#pl2 {
-  margin-left: 100px;
+.tot2 {
+  position: relative;
+  left: -140px;
 }
 
-#pl1, #pl2 {
-  text-align: center;
+.toto2,
+.toto1 {
+  height: 200px;
+  border: solid whitesmoke;
+  padding: 10px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
 }
 
-#namePlayeur1,#namePlayer2 {
-  font-size:1.6em;
+p,
+.tototext,
+#namePlayer1,
+#namePlayer2 {
+  font-size: 1.25em;
   font-weight: 900;
 }
 
+/* #pl1 {
+  margin-right: 100px;
+} */
 
+/* #pl2 {
+  margin-left: 100px;
+} */
+
+#pl1,
+#pl2 {
+  text-align: center;
+}
+
+#namePlayeur1,
+#namePlayer2 {
+  font-size: 1.6em;
+  font-weight: 900;
+}
 
 #player1-total-score,
 #player2-total-score {
-  margin-top: 15px;
+  position: relative;
+  top: 61px;
   border-radius: 15px;
   width: 150px;
   height: 50px;
   background-color: aqua;
   display: flex;
   justify-content: center;
-  flex-direction: column  
+  flex-direction: column;
 }
 
 .playeurs,
@@ -190,6 +223,9 @@ courant1 {
 }
 
 #play {
+  position: absolute;
+  top: 166px;
+  left: 0px;
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -215,13 +251,19 @@ h1 {
 
 #tapisdécoration {
   position: absolute;
-  top: 120px;
+  top: 200px;
   display: flex;
   justify-content: center;
   background-color: green;
-  width: 40vw;
-  border-radius: 25px;
+  width: 30vw;
   border: solid 2px;
+  border-right: white;
+  border-bottom: white;
+  border-radius: 25px;
+  border-top-left-radius: black;
+  border-top-right-radius: black;
+  border-bottom-right-radius: with;
+  border-bottom-left-radius: black;
 }
 
 img.style {
@@ -241,6 +283,9 @@ main {
 }
 
 img#dé {
+  transition: transform 2s;
+  position: absolute;
+  left: 600px;
   width: 250px;
   border: solid 5px;
   border-radius: 50%;
@@ -254,8 +299,8 @@ img#dé {
 }
 
 h2 {
-  text-align:center;
- color: rgb(19, 19, 2);
+  text-align: center;
+  color: rgb(19, 19, 2);
   font-size: 1.5 em;
 }
 
@@ -310,6 +355,61 @@ h2 {
     inset 2px 2px 3px rgba(0, 0, 0, 0.6);
 }
 
+/* ----------------------------------------------------scores listes--------------------------------------------------- */
+.titreScore {
+  height: 30px;
+}
+
+button,
+.titreScore,
+#score-table,
+#score-table2 .titreScore {
+  border: solid 2px;
+  width: px;
+  text-align: center;
+}
+
+.boxScore {
+  width: 155px;
+}
+
+#twinScrores {
+  z-index: 1000;
+  position: absolute;
+  top: -48px;
+  left: 551px;
+  padding: 20px;
+  border-radius: 10px;
+  border: solid 3px saddlebrown;
+  width: 340px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background: bisque;
+}
+
+.boxScore,
+.titreScore,
+#score-table,
+.titreScore {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+button,
+.buttonscores,
+#validerJoueurActif2 {
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 16px;
+  height: 35px;
+  background-color: rgb(243, 239, 0);
+  font-size: 0.9em;
+  color: rgb(25, 35, 6);
+}
+
 @media screen and (max-width: 1584px) {
   img.style {
     width: 2600px;
@@ -332,6 +432,8 @@ h2 {
   }
 
   .boxmessage {
+    position: relative;
+    left: 143px;
     font-size: 5.1em;
     display: flex;
     align-items: center;
@@ -389,15 +491,10 @@ h2 {
     top: 113px;
   }
 
-  #pl1,
+  /* #pl1,
   #pl2 {
     margin: 0px;
-  }
-
-  #pl2 {
-    position: absolute;
-    top: 164px;
-  }
+  } */
 
   h2,
   #player1-total-score,

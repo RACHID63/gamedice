@@ -27,7 +27,7 @@
           </div>
       </div>
     </section>
-    <main>
+    <div class="tapis">
       <div id="tapisdécoration">
         <img class="style" src="./images/decoration.svg" alt="" />
       </div>
@@ -35,36 +35,37 @@
         <!-- <div >
           <img id="new-game-button" src="./images/nouveau jeu.jfif" alt="" />
         </div> -->
-        <button type="submit" class="newGameButton">newGame</button>
+        <button id="new-game-button" type="submit" class="newGameButton">newGame</button>
         <div class="container-sm boxmessage">
           Info-Message : <span id="message"></span>
         </div>
       </div>
       <div></div>
       <div class="playeurs">
-        <div id="pl1">
-          <span id="namePlayer1"></span>
-          <div id="player1-total-score"></div>
+        <div class="toto2">
+          <div id="pl1"><P classe="tototext">TOTAL : <span id="namePlayer1"></span> </P>
+            <div id="player1-total-score"></div>
+          </div>
         </div>
         <div id="play">
           <div id="twinScrores">
             <div class="boxScore">
                 <b class="titreScore">SCORE 1</b>  
                <div id="score-table" ></div>
-                <button  id="inject-table" type="submit">click les scores</button>
+                <button class=".buttonscores"  id="inject-table" type="submit">click les scores</button>
             </div>
             <div class="boxScore">
                 <b class="titreScore">SCORE 2</b>  
                <div id="score-table2" ></div>
-                <button id="inject-table2" type="submit">click les scores</button>
+                <button class=".buttonscores" id="inject-table2" type="submit">click les scores</button>
             </div>
         </div>
-          <img id="dé" src="./images/dé.jfif" alt="2 dés" />
+          <img id="dé" src="./images/dé.jfif" style="transform: rotate(0deg);"  alt="2 dés"  />
         </div>
-        <div id="pl2">
-          <!-- <h2 class="nameplayer2">PLAYER 2</h2> -->
-          <span id="namePlayer2"></span>
-          <div id="player2-total-score"></div>
+        <div class="toto1">
+          <div id="pl2"><P>TOTAL <span id="namePlayer2"></span> </P>
+            <div id="player2-total-score"></div>
+          </div>
         </div>
       </div>
       <div class="containers groupeLance">
@@ -83,7 +84,7 @@
           <input id="hold-button" class="style" type="button" value="hold" />
         </div>
       </div>
-    </main>
+    </div>
     <script src="./javascript.js"></script>
   </body>
 </html>

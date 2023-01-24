@@ -11,6 +11,8 @@ var tablePartie2 = ["parties" , ];
 var tableScore1 = [ , ];
 var tableScore2 = [ , ];
 
+
+
 // --------------------NOUVEAU JEUX REINITIALISATION DU JEU--------------------------
 // document
 //   .getElementById("newGameButton")
@@ -54,6 +56,7 @@ var player2Current = document.getElementById("player2-round-score");
 var playButton = document.getElementById("roll-dice-button");
 var hold = document.getElementById("hold-button");
 var newGame = document.getElementById("new-game-button");
+var boxScores = document.getElementById("twinScrores");
 
 // Ajout d'événements pour les boutons
 //  hold1.addEventListener("click", holdScore1);
@@ -63,6 +66,17 @@ var newGame = document.getElementById("new-game-button");
 // --------------------LANCE LA PARTIE DE Dé----------------------------------------------
 
 playButton.addEventListener("click", function rollDice() {
+  boxScores.style.display = "none"
+  dé.style.visibility ="visible"
+  //lance le dé et fait tourner l'image
+  let angle = 0;
+const button = document.getElementById("roll-dice");
+const image = document.getElementById("dé");
+
+//fais tourner la photo
+  angle += 180;
+  image.style.transform = "rotate(${angle}deg)";
+
   // Générer un nombre aléatoire entre 1 et 6 pour le joueur actuel
   var roll = Math.floor(Math.random() * 6) + 1;
   player1Score = player1Score + roll;
@@ -110,8 +124,8 @@ playButton.addEventListener("click", function rollDice() {
 //   return Math.floor(Math.random() * max);
 // }
 
-
   // ---évènement sur le bouton hold transfère la sommmes des joueurs dans un tableau----
+
   let dé =document.getElementById("dé");
   let tableContainer = document.getElementById("score-table");
 let table2Container = document.getElementById("score2-table2");
@@ -120,6 +134,7 @@ let buttonScore = document.getElementById("inject-table");
 
   hold.addEventListener("click", function () {
     dé.style.display = "none"
+    boxScores.style.visibility = "visible"
     tablePartie1.push(player1Score)
     tablePartie2.push(player2Score)
     console.log(tablePartie1)
@@ -161,14 +176,17 @@ buttonScore.addEventListener("click" , function () {
        buttonScore.textContent= "click les scores"
 
      })
-
-     
     score.length = 0;
     // location = "http://127.0.0.1:5500/http://127.0.0.1:5500/"
     // location.href =location .href;
    
 })
 
+newGame.addEventListener("click" ,  () => {
+  location = "http://127.0.0.1:5503/"
+    location.href =location .href;
+  
+})
   
 
 
