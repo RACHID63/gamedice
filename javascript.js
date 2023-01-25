@@ -8,25 +8,17 @@ var scorecourant1 = 0;
 var scorecourant2 = 0;
 var tablePartie1 = ["parties" , ];
 var tablePartie2 = ["parties" , ];
-var tableScore1 = [ , ];
-var tableScore2 = [ , ];
+var tableScore1 = [ , ];  // table scores courant1
+var tableScore2 = [ , ];  // table scores courant2
 
 
 
 // --------------------NOUVEAU JEUX REINITIALISATION DU JEU--------------------------
-// document
-//   .getElementById("newGameButton")
-//   .addEventListener("click", function () {
-//     player1Score = 0;
-//     player2Score = 0;
-//     joueurActif1 = "";
-//     joueurActif2 = "";
-//     scorecourant1 ="0";
-//     scorecourant2 = "0";
-//     player1Total ="0"
-//     scorecourant1.textContent =""
-
-  // });
+var newGame = document.getElementById("new-game-button");
+newGame.addEventListener("click", () => {
+  location = "http://127.0.0.1:5503/";
+  location.href = location.href;
+});
 // --------------------NOUVEAU JEUX REINITIALISATION DU JEU--------------------------
 
 // --------------------SAISI DES JOUEURS----------------------------------------------
@@ -54,19 +46,12 @@ var player1Current1 = document.getElementById("player1-round-score");
 var player2Total = document.getElementById("player2-total-score");
 var player2Current = document.getElementById("player2-round-score");
 var playButton = document.getElementById("roll-dice-button");
-var hold = document.getElementById("hold-button");
-var newGame = document.getElementById("new-game-button");
 var boxScores = document.getElementById("twinScrores");
-
-// Ajout d'événements pour les boutons
-//  hold1.addEventListener("click", holdScore1);
-//  hold2.addEventListener("click", holdScore2);
-//  newGame.addEventListener("click", newGame);
 
 // --------------------LANCE LA PARTIE DE Dé----------------------------------------------
 
 playButton.addEventListener("click", function rollDice() {
-  boxScores.style.display = "none"
+  // boxScores.style.display = "none"
   dé.style.visibility ="visible"
   //lance le dé et fait tourner l'image
   let angle = 0;
@@ -105,12 +90,6 @@ const image = document.getElementById("dé");
     //   sommes score courant
   document.getElementById("player2-round-score").innerHTML = player2Score;
   tableScore2.push(roll);
-    // document.getElementById("player2-round-score").textContent = roll;
-    // rollinfo = joueurActif2 + " a sorti: " + roll;
-    // document.querySelector("#message").textContent =
-    //   "Tour du joueur " + currentPlayer;
-    // document.querySelector("#message").textContent = rollinfo;
-    // resetScore();
     return;
   }
   // Sinon ajouter le score à la variable score totale
@@ -120,20 +99,17 @@ const image = document.getElementById("dé");
   }
 });
 
-// function getRandomInt(max) {
-//   return Math.floor(Math.random() * max);
-// }
-
   // ---évènement sur le bouton hold transfère la sommmes des joueurs dans un tableau----
-
   let dé =document.getElementById("dé");
   let tableContainer = document.getElementById("score-table");
-let table2Container = document.getElementById("score2-table2");
+let table2Container = document.getElementById("score-table2");
 let titrescore = document.getElementById("titreScore");
-let buttonScore = document.getElementById("inject-table");
-
+let buttonScore = document.getElementById("inject-table");    // bouton liste des scores courants tanble1
+let buttonScore2 = document.getElementById("inject-table2");  // bouton liste des scores courants tanble2
+var hold = document.getElementById("hold-button");
   hold.addEventListener("click", function () {
-    dé.style.display = "none"
+
+    // dé.style.display = "none"
     boxScores.style.visibility = "visible"
     tablePartie1.push(player1Score)
     tablePartie2.push(player2Score)
@@ -143,16 +119,57 @@ let buttonScore = document.getElementById("inject-table");
     player2Total.textContent = player2Score;
   })
 
-buttonScore.addEventListener("click" , function () {
+  buttonScore2.addEventListener("click" , function () {
     let table = document.createElement("table");
     let tbody = document.createElement("tbody");
-    for (let i = 0; i < score.length; i++) {
+    for (let i = 0; i < tableScore2.length; i++) {
         let tr = document.createElement("tr");
         let td = document.createElement("td");
-        td.innerHTML = score[i];
+        td.innerHTML = tableScore2[i];
         tr.appendChild(td);
         tbody.appendChild(tr);
     }
+
+    table.appendChild(tbody);
+    table2Container.appendChild(table)
+    table2Container.style.width = "150px" 
+    table2Container.style.backgroundColor = "rgb(199, 199, 255)" ;
+    table2Container.style.display = "bloc"
+    table2Container.style.flexDirection = "row"
+    table2Container.style.justifyContent = "center"
+    table2Container.style.border = "solid"
+    table2Container.style.borderRadius = "10PX"
+    table2Container.style.color= "rgb(204, 0, 0)"
+    table2Container.style.overflow = "hidden"
+
+    // modiffication du bouton click les score en ferme la liste
+    buttonScore.textContent= "efface la liste"
+    buttonScore.style.background = "green"
+    buttonScore.style.color = "whitesmoke"
+// efface le tableau
+     buttonScore.addEventListener( "click" ,  function () {
+        
+        tableContainer.style.height = "0"
+       buttonScore.textContent= "click les scores"
+
+     })
+    score.length = 0;
+    // location = "http://127.0.0.1:5500/http://127.0.0.1:5500/"
+    // location.href =location .href;
+   
+})
+
+buttonScore.addEventListener("click" , function () {
+    let table = document.createElement("table");
+    let tbody = document.createElement("tbody");
+    for (let i = 0; i < tableScore1.length; i++) {
+        let tr = document.createElement("tr");
+        let td = document.createElement("td");
+        td.innerHTML = tableScore1[i];
+        tr.appendChild(td);
+        tbody.appendChild(tr);
+    }
+
     table.appendChild(tbody);
     tableContainer.appendChild(table)
     tableContainer.style.width = "150px" 
@@ -182,11 +199,11 @@ buttonScore.addEventListener("click" , function () {
    
 })
 
+
 newGame.addEventListener("click" ,  () => {
   location = "http://127.0.0.1:5503/"
     location.href =location .href;
   
 })
   
-
 

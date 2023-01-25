@@ -115,20 +115,21 @@ span#message {
   width: 100%;
 }
 
-.tot1 {
+.tot01 {
   position: relative;
- right: 200px;
+ left: 140px;
 }
 
-.tot2 {
+.tot02 {
   position: relative;
-  left: -140px;
+  right: -140px;
 }
 
 .toto2,
 .toto1 {
   height: 200px;
   border: solid whitesmoke;
+  border-radius: 15px;
   padding: 10px;
   display: flex;
   align-content: center;
@@ -255,7 +256,7 @@ h1 {
   display: flex;
   justify-content: center;
   background-color: green;
-  width: 30vw;
+  width: 25vw;
   border: solid 2px;
   border-right: white;
   border-bottom: white;
@@ -267,7 +268,7 @@ h1 {
 }
 
 img.style {
-  width: 55vw;
+  width: 22vw;
   height: 50vh;
 }
 
@@ -374,9 +375,9 @@ button,
 }
 
 #twinScrores {
-  z-index: 1000;
+  z-index: 200;
   position: absolute;
-  top: -48px;
+  top: -344px;
   left: 551px;
   padding: 20px;
   border-radius: 10px;
@@ -570,16 +571,16 @@ button,
     height: 30px;
   }
 
-  #pl1 {
+  /* #pl1 {
     position: absolute;
     left: 70px;
-  }
+  } */
 
-  #pl2 {
+  /* #pl2 {
     position: absolute;
     right: 70px;
     height: 27px;
-  }
+  } */
 
   h2,
   #player1-total-score,
