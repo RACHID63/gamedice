@@ -1,0 +1,50 @@
+<mxfile host="65bd71144e">
+    <diagram name="Page-1" id="FigC7VYOuPDXeb3MYC7S">
+        <mxGraphModel dx="943" dy="644" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="20SwHg2_wjuBalWzO4l5-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="20SwHg2_wjuBalWzO4l5-1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="460" y="400" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="20SwHg2_wjuBalWzO4l5-1" value="&lt;b&gt;&lt;font color=&quot;#f0664a&quot; style=&quot;background-color: rgb(0, 51, 51); font-size: 17px;&quot;&gt;LANCE UNE PARTIE&lt;br&gt;INITILISATION DU JEUX&lt;br&gt;par bouton&lt;br&gt;&lt;/font&gt;&lt;/b&gt;&lt;div style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; line-height: 19px;&quot;&gt;&lt;b style=&quot;&quot;&gt;&lt;font color=&quot;#f0664a&quot; style=&quot;background-color: rgb(0, 51, 51); font-size: 24px;&quot;&gt;newGame&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+                    <mxGeometry x="330" y="130" width="260" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="20SwHg2_wjuBalWzO4l5-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;" parent="1" source="20SwHg2_wjuBalWzO4l5-3" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="770" y="660" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="770" y="510"/>
+                            <mxPoint x="770" y="640"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="20SwHg2_wjuBalWzO4l5-6" value="&lt;div style=&quot;color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; line-height: 19px;&quot;&gt;let &lt;span style=&quot;color: #9cdcfe;&quot;&gt;joueurActif1=true&lt;/span&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="20SwHg2_wjuBalWzO4l5-5" connectable="0" vertex="1">
+                    <mxGeometry x="-0.2645" relative="1" as="geometry">
+                        <mxPoint x="-37" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="20SwHg2_wjuBalWzO4l5-3" value="&lt;font style=&quot;background-color: rgb(0, 0, 51);&quot; color=&quot;#f046f0&quot;&gt;TIRAGE AU SORT&lt;br&gt;QUI COMMENCE&amp;nbsp;&lt;br&gt;LE PREMIER&lt;br&gt;VARIABLE&lt;br&gt;&lt;/font&gt;&lt;div style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; line-height: 19px;&quot;&gt;&lt;div style=&quot;line-height: 19px;&quot;&gt;&lt;font style=&quot;background-color: rgb(0, 0, 51);&quot; color=&quot;#f046f0&quot;&gt;let joueurActif1&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;line-height: 19px;&quot;&gt;&lt;div style=&quot;line-height: 19px;&quot;&gt;&lt;font style=&quot;background-color: rgb(0, 0, 51);&quot; color=&quot;#f046f0&quot;&gt;let joueurActif2&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+                    <mxGeometry x="326.25" y="360" width="267.5" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="20SwHg2_wjuBalWzO4l5-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=1;exitDx=0;exitDy=0;" parent="1" source="20SwHg2_wjuBalWzO4l5-3" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="160" y="700" as="targetPoint"/>
+                        <mxPoint x="77" y="520" as="sourcePoint"/>
+                        <Array as="points">
+                            <mxPoint x="160" y="510"/>
+                            <mxPoint x="160" y="650"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="20SwHg2_wjuBalWzO4l5-8" value="&lt;div style=&quot;color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; line-height: 19px;&quot;&gt;let &lt;span style=&quot;color: #9cdcfe;&quot;&gt;joueurActif1=false&lt;/span&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="20SwHg2_wjuBalWzO4l5-7" connectable="0" vertex="1">
+                    <mxGeometry x="-0.2645" relative="1" as="geometry">
+                        <mxPoint x="73" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

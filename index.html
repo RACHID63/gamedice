@@ -12,7 +12,7 @@
     <title>jeu de dé 2 joueurs</title>
   </head>
   <body>
-    <section class="joueurs">
+    <section id="boxJoueurs"  class="joueurs">
             <h2>Playeurs</h2>
       <div>
           <div class="box">
@@ -36,7 +36,7 @@
           <img id="new-game-button" src="./images/nouveau jeu.jfif" alt="" />
         </div> -->
         <button id="new-game-button" type="submit" class="newGameButton">newGame</button>
-        <div class="container-sm boxmessage">
+        <div class=" boxmessage">
           Info-Message : <span id="message"></span>
         </div>
       </div>
@@ -50,14 +50,14 @@
         <div id="play">
           <div id="twinScrores">
             <div class="boxScore">
-                <b class="titreScore">SCORE 1</b>  
-               <div id="score-table" ></div>
-                <button class=".buttonscores"  id="inject-table" type="submit">click les scores</button>
+                <b id="nom1" class="titreScore"></b>  
+               <div id="score-table1" ></div>
+                <button class="buttonscores"  id="inject-table1" type="submit">click les scores</button>
             </div>
             <div class="boxScore">
-                <b class="titreScore">SCORE 2</b>  
+                <b  id="nom2"  class="titreScore"></b>  
                <div id="score-table2" ></div>
-                <button class=".buttonscores" id="inject-table2" type="submit">click les scores</button>
+                <button class="buttonscores" id="inject-table2" type="submit">click les scores</button>
             </div>
         </div>
           <img id="dé" src="./images/dé.jfif" style="transform: rotate(0deg);"  alt="2 dés"  />
@@ -73,7 +73,7 @@
           <h2 id="Courant1">Score courant 1</h2>
           <div id="player1-round-score"></div>
         </div>
-        <a class="container-sm roll-dice" id="roll-dice-button"
+        <a class=" roll-dice" id="roll-dice-button"
           >Lancer dé <i class="fa-sharp fa-solid fa-play"></i
         ></a>
         <div class="container-sm boxcourant2">
