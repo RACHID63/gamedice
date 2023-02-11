@@ -20,10 +20,17 @@ body {
   z-index: 100;
 }
 
-#boxJoueurs.joueurs {
-  z-index: 1;
+.col-2 {
+ 
+  width: 423px;
+  height: 122px;
+}
+
+.joueurs {
+  /* z-index: 1; */
+  /* position: absolute;
   top: 87px;
-  left: 250px;
+  left: 250px; */
   width: 392px;
   height: 100px;
   border-radius: 10px;
@@ -33,7 +40,7 @@ body {
   justify-content: center;
   align-items: center;
   border: solid 3px black;
-  position: absolute;
+  /* position: absolute; */
 }
 
 #info,
@@ -119,18 +126,19 @@ span#message {
   width: 100%;
 }
 
-.toto1 {
+/* .toto1 {
   position: relative;
   left: 140px;
-}
+} */
 
-.toto2 {
+/* .toto2 {
   position: relative;
   left: -140px;
-}
+} */
 
 .toto2,
 .toto1 {
+  width: 200px;
   height: 200px;
   border: solid whitesmoke;
   border-radius: 15px;
@@ -170,7 +178,8 @@ p,
 #player1-total-score,
 #player2-total-score {
   position: relative;
-  top: 61px;
+  top: 5px;
+  left: 9px;
   border-radius: 15px;
   width: 150px;
   height: 50px;
@@ -194,8 +203,8 @@ p,
   border: solid whitesmoke 2px;
   box-shadow: -9px 8px 0 rgb(74, 75, 73);
   border-radius: 55px;
-  position: fixed;
-  top: 700px;
+  position: relative;
+  top: 27px;
   width: 1230px;
 }
 
@@ -220,7 +229,7 @@ courant1 {
   border-radius: 15px;
   width: 150px;
   height: 50px;
-  margin-top: 30px;
+  margin-top: 0px;
   background-color: aqua;
   display: flex;
   align-items: center;
@@ -228,9 +237,9 @@ courant1 {
 }
 
 #play {
-  position: absolute;
-  top: 166px;
-  left: 0px;
+  position: relative;
+  top:-1px;
+  left:-27px;
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -255,20 +264,13 @@ h1 {
 }
 
 #tapisdécoration {
-  position: absolute;
-  top: 200px;
+  position: relative;
+  top: 0px;
   display: flex;
   justify-content: center;
   background-color: green;
   width: 25vw;
-  border: solid 2px;
-  border-right: white;
-  border-bottom: white;
   border-radius: 25px;
-  border-top-left-radius: black;
-  border-top-right-radius: black;
-  border-bottom-right-radius: with;
-  border-bottom-left-radius: black;
 }
 
 img.style {
@@ -290,7 +292,6 @@ main {
 #dé {
   transition: transform 2s;
 }
-
 
 img#dé {
   transition: transform 2s;
@@ -384,17 +385,17 @@ button,
 }
 
 #twinScrores {
-  z-index: 1;
-  position: absolute;
-  top: -344px;
-  left: 551px;
+  visibility: hidden;
+  position: relative;
+  top: 0px;
+  left: 25px;
   padding: 20px;
   border-radius: 10px;
   border: solid 3px saddlebrown;
   width: 340px;
-  display: flex;
+  /* display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-around; */
   background: bisque;
 }
 
@@ -420,210 +421,3 @@ button,
   color: rgb(25, 35, 6);
 }
 
-@media screen and (max-width: 1584px) {
-  img.style {
-    width: 2600px;
-  }
-
-  .header {
-    position: absolute;
-    top: -63px;
-    flex-direction: column;
-    width: 300px;
-    height: 348px;
-    justify-content: center;
-    align-content: center;
-  }
-
-  img#new-game-button {
-    width: 75px;
-    top: 63px;
-    left: 113px;
-  }
-
-  .boxmessage {
-    right: 22px;
-    position: absolute;
-    font-size: 5.1em;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-  }
-
-  #message {
-    position: relative;
-    top: 10px;
-    width: 220px;
-  }
-
-  .playeurs {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  img#dé {
-    display: none;
-  }
-
-  .groupeLance {
-    display: flex;
-    flex-direction: row;
-    width: 533px;
-    height: 245px;
-    position: absolute;
-    top: 500px;
-  }
-
-  #player1-round-score,
-  #player2-round-score {
-    width: 134px;
-    height: 37px;
-  }
-
-  #roll-dice-button {
-    display: none;
-    cursor: pointer;
-    font-size: 19px;
-    position: absolute;
-    top: 30px;
-    left: 124px;
-  }
-}
-
-@media screen and (max-width: 1024px) and (orientation: portrait) {
-  .playeurs {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 113px;
-  }
-
-  /* #pl1,
-  #pl2 {
-    margin: 0px;
-  } */
-
-  h2,
-  #player1-total-score,
-  #player1-total-score,
-  #roll-dice-button,
-  .boxmessage {
-    margin-bottom: 1px;
-    font-size: 1.5em;
-    text-align: center;
-  }
-
-  img#dé {
-    position: relative;
-    display: none;
-  }
-
-  .groupeLance {
-    display: flex;
-    flex-direction: row;
-    width: 367px;
-    height: 245px;
-    position: absolute;
-    top: 370px;
-  }
-
-  #player1-round-score,
-  #player2-round-score {
-    width: 134px;
-    height: 37px;
-  }
-
-  #roll-dice-button {
-    cursor: pointer;
-    position: absolute;
-    top: 30px;
-    left: 124px;
-  }
-}
-
-@media screen and (max-width: 1280px) and (orientation: landscape) {
-  .header {
-    position: absolute;
-    top: -43px;
-    flex-direction: column;
-    width: 672px;
-    height: 151px;
-    justify-content: center;
-    align-content: center;
-  }
-
-  #tapisdécoration {
-    display: none;
-  }
-
-  img#new-game-button {
-    width: 75px;
-    top: 45px;
-    left: 70px;
-  }
-
-  .playeurs {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    position: absolute;
-    top: 0px;
-  }
-
-  #pl1,
-  #pl2 {
-    margin: 0px;
-    width: 120px;
-    height: 30px;
-  }
-
-  /* #pl1 {
-    position: absolute;
-    left: 70px;
-  } */
-
-  /* #pl2 {
-    position: absolute;
-    right: 70px;
-    height: 27px;
-  } */
-
-  h2,
-  #player1-total-score,
-  #player2-total-score,
-  #roll-dice-button,
-  #player1-round-score,
-  #player2-round-score {
-    margin-top: 0;
-    font-size: 16px;
-    text-align: center;
-    width: 120px;
-    height: 25px;
-  }
-
-  .groupeLance {
-    display: flex;
-    flex-direction: row;
-    width: 367px;
-    height: 200px;
-    position: absolute;
-    top: 145px;
-  }
-
-  #Courant1,
-  #Courant2 {
-    margin-bottom: 15px;
-  }
-
-  #roll-dice-button {
-    cursor: pointer;
-    position: absolute;
-    top: 15px;
-    left: 124px;
-  }
-}
