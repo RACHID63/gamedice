@@ -34,7 +34,7 @@ var champPlayer2TotalScore = document.getElementById("player2-total-score");
 var champPlayer2Scoreround = document.getElementById("player2-round-score");
 var playButton = document.getElementById("roll-dice-button");
 var boxScores = document.getElementById("twinScrores");
-// -----------------------------------------condition sur jours---------------------------------------------------------------
+// -----------------------------------------condition sur jours------------------------------------------------
 var conditionJoueur = function (joueurGagnant,joueurActif1,joueurActif1 ) {
   if ((joueurGagnant = joueurActif1)) {
     player1Scoreround = player1Scoreround + roll;
@@ -94,6 +94,13 @@ function déLancé(roll) {
   return roll;
 }
 
+let rollDice = function rollDice(joueurActif1,joueurActif2) {
+  // Générer un nombre aléatoire entre 1 et 6 pour le joueur actuel
+  var roll = déLancé();
+  conditionJoueur(joueurActif1,joueurActif1);
+  return  roll  ;
+};
+
 // --------------------SAISI DES JOUEURS----------------------------------------------
 document
   .getElementById("validerJoueurActif1")
@@ -119,26 +126,33 @@ tirageJoueur.addEventListener("click", function (joueurGagnant) {
 
   if (joueurGagnant == joueurActif1) {
 
-    alert( joueurGagnant + "appuye sur lzncé dé pour commencer la partie  " )
+    alert( joueurGagnant + "appuye sur LANCE dé pour commencer la partie  " )
 
-    playButton.addEventListener("click", function rollDice(joueurActif1,joueurActif2) {
-        // Générer un nombre aléatoire entre 1 et 6 pour le joueur actuel
-        var roll = déLancé();
-        conditionJoueur(joueurActif1,joueurActif1);
-        return  roll  ;
-      });
+    rollDice ();
    
-  } else if (joueurGagnant == joueurActif2) {
-    alert( joueurGagnant + "commence la partie")
-    playButton.addEventListener("click", function rollDice(joueurActif1,joueurActif2) {
-      // Générer un nombre aléatoire entre 1 et 6 pour le joueur actuel
-      var roll = déLancé();
-      conditionJoueur();
-      return  roll  ;
-    });
-   
+  } else {
+    alert( joueurPerdant + "attend")
   }
-  
-  return [roll,player1Scoreround, player2Scoreround, player1TotalScore, player2TotalScore];
+    
+  champPlayer1Scoreround.textContent = rollDice ()
+  champPlayer2Scoreround.textContent = rollDice ()
+
+
+  return roll;
+
+
 });
+
+
+
+
+
+
+// playButton.addEventListener("click", function rollDice(joueurActif1,joueurActif2) {
+//   // Générer un nombre aléatoire entre 1 et 6 pour le joueur actuel
+//   var roll = déLancé();
+//   conditionJoueur(joueurActif1,joueurActif1);
+//   return  roll  ;
+// });
+
 
