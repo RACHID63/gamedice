@@ -1,5 +1,5 @@
-var joueurGagnant ;
-var joueurPerdant ;
+var joueurGagnant;
+var joueurPerdant;
 let result;
 // Initialiser les variables de score et de toure
 var rollinstantané;
@@ -23,7 +23,7 @@ let table2Container = document.getElementById("score-table2");
 let titrescore = document.getElementById("titreScore");
 let buttonScore = document.getElementById("inject-table1"); // bouton liste des scores courants tanble1
 let buttonScore2 = document.getElementById("inject-table2"); // bouton liste des scores courants tanble2
-var hold = document.getElementById("hold-button");
+var holdButton = document.getElementById("hold-button");
 // --------------------SAISI DES JOUEURS----------------------------------------------
 // Référence aux éléments HTML
 let boxSaisiJoueurs = document.getElementById("boxJoueurs");
@@ -32,60 +32,27 @@ var champPlayer1TotalScore = document.getElementById("player1-total-score");
 var champPlayer1Scoreround = document.getElementById("player1-round-score");
 var champPlayer2TotalScore = document.getElementById("player2-total-score");
 var champPlayer2Scoreround = document.getElementById("player2-round-score");
-var playButton = document.getElementById("roll-dice-button");
+var playButton1 = document.getElementById("roll-dice-button1");
+var playButton2 = document.getElementById("roll-dice-button2");
+
 var boxScores = document.getElementById("twinScrores");
-// -----------------------------------------condition sur jours------------------------------------------------
-var conditionJoueur = function (joueurGagnant,joueurActif1,joueurActif1 ) {
-  if ((joueurGagnant = joueurActif1)) {
-    player1Scoreround = player1Scoreround + roll;
-    // jortie jet de dé instantanée
-    var rollinstantané = joueurActif1 + " a sorti: " + roll;
-    document.querySelector("#message").textContent = rollinstantané;
-    //   sommes score courant
-    champPlayer1Scoreround.textContent = player1Scoreround;
-    tableScoreCourant1.push(roll);
-    console.table(tableScoreCourant1);
-    tableScoreCourant1.push(roll);
-    // si le joueur actuel a roulé 1, passer le tour au joueur suivant
-    if (roll === 1) {
-      currentPlayer = currentPlayer === 1 ? 2 : 1;
-      document.querySelector("#message").textContent = currentPlayer;
-      document.querySelector("#message").textContent = rollinstantané;
-      // comptabilise les scores joués
-      tableScoreCourant2.push(roll);
-      player2Scoreround = player2Scoreround + roll;
-      // sortie jet de dé instantanée
-      rollinstantané = joueurActif2 + " a sorti: " + roll;
-      document.querySelector("#message").textContent = rollinstantané;
-      //   sommes score courant
-      document.getElementById("player2-round-score").innerHTML =
-        player2Scoreround;
-      tableScoreCourant2.push(roll);
-    }
-    // Sinon ajouter le score à la variable score totale pour 
-    else {
-      player1Scoreround = player1Scoreround + roll;
-      // jortie jet de dé instantanée pour joueurActif2
-      rollinstantané = joueurActif2 + " a sorti: " + roll;
-      document.querySelector("#message").textContent = rollinstantané;
-      //   sommes score courant
-      champPlayer1Scoreround.textContent = player2Scoreround;
-      tableScoreCourant2.push(roll);
-      console.table(tableScoreCourant2);
-      // tableScoreCourant1.push(roll);
-    }
-  }
-  return [player1Scoreround, player2Scoreround, tableScoreCourant1, tableScoreCourant2];
-};
-// ----------------------------------------------------------------------------------------
+
+// --------------------------------------------------------------------------------------------------------------------------------
+
 // --------------------NOUVEAU JEUX REINITIALISATION DU JEU--------------------------
 var newGame = document.getElementById("new-game-button");
 var tirageJoueur = document.getElementById("validerJoueurActif2");
 
 newGame.addEventListener("click", function () {
-
   location = "http://127.0.0.1:5503/";
   location.href = location.href;
+  player1TotalScore = 0;
+  player2TotalScore = 0;
+  player1Scoreround = 0;
+  player2Scoreround = 0;
+  champPlayer1TotalScore = " ";
+  champPlayer1Scoreround = " ";
+  champPlayer2Scoreround = " ";
 });
 // --------------------LANCE LA PARTIE DE Dé----------------------------------------------
 
@@ -93,13 +60,6 @@ function déLancé(roll) {
   var roll = Math.floor(Math.random() * 6) + 1;
   return roll;
 }
-
-let rollDice = function rollDice(joueurActif1,joueurActif2) {
-  // Générer un nombre aléatoire entre 1 et 6 pour le joueur actuel
-  var roll = déLancé();
-  conditionJoueur(joueurActif1,joueurActif1);
-  return  roll  ;
-};
 
 // --------------------SAISI DES JOUEURS----------------------------------------------
 document
@@ -111,48 +71,102 @@ document
     nom1.textContent = joueurActif1;
   });
 
-tirageJoueur.addEventListener("click", function (joueurGagnant) {
+tirageJoueur.addEventListener("click", function () {
   joueurActif2 = document.getElementById("joueur2").value;
   document.querySelector("#namePlayer2").textContent = joueurActif2;
   var nom2 = document.getElementById("nom2");
   nom2.textContent = joueurActif2;
-  var joueurGagnant = Math.random() < 0.5 ? joueurActif1 : joueurActif2;
-  joueurPerdant = joueurGagnant === joueurActif1 ? joueurActif2 : joueurActif1;
-  document.getElementById("namePlayer1").value = joueurGagnant;
-  document.getElementById("namePlayer2").value = joueurPerdant;
-  console.log("Le joueur tiré au sort est : " + joueurGagnant);
-  console.log("Le joueur tiré au sort est : " + joueurPerdant);
-  alert("Le joueur tiré au sort est : " + joueurGagnant);
 
-  if (joueurGagnant == joueurActif1) {
+  // Définit un tableau de joueurs
+  let players = ["joueurActif1 ", "joueurActif2"];
+  // Sélectionne aléatoirement SUR L'INDEX d'un joueur pour commencer à jouer
+  let premierJoueurIndex = Math.floor(Math.random() * players.length);
+  let premierJoueur = players[premierJoueurIndex]; // joueur tiré au d=sort
+  // Affiche le nom du deuxième joueur
+  let deuxiemeJoueur = players[(premierJoueurIndex + 1) % players.length];
+  document.getElementById("namePlayer1").value = premierJoueur;
+  document.getElementById("namePlayer2").value = deuxiemeJoueur;
+  alert("Le joueur tiré au sort est : " + premierJoueur);
 
-    alert( joueurGagnant + "appuye sur LANCE dé pour commencer la partie  " )
+  if (premierJoueurIndex == 0) {
+    alert(
+      premierJoueur + "  " + "click sur lancé dé pour commencer la partie  "
+    );
 
-    rollDice ();
-   
-  } else {
-    alert( joueurPerdant + "attend")
+    playButton1.addEventListener("click", function () {
+      // Générer un nombre aléatoire entre 1 et 6 pour le joueur actuel
+
+      var roll = déLancé();
+      player1TotalScore += roll;
+      champPlayer1Scoreround.textContent = player1TotalScore;
+      if (player1TotalScore >= 100) {
+
+        alert("c'est le tour" + "  " + deuxiemeJoueur);
+
+        playButton2.addEventListener("click", function () {
+          déLancé();
+          player2TotalScore += roll;
+          champPlayer2Scoreround.textContent = player2TotalScore;
+          limite2sup100(); // lorsque la valeur sera =<100 pourle joueur 2
+          return player2TotalScore;
+        });
+      }
+
+      return roll;
+    });
   }
-    
-  champPlayer1Scoreround.textContent = rollDice ()
-  champPlayer2Scoreround.textContent = rollDice ()
+  else if  (premierJoueurIndex == 1) {
+    alert(
+      deuxiemeJoueur + "  " + "click sur lancé dé pour commencer la partie  "
+    );
 
+    playButton2.addEventListener("click", function () {
+      // Générer un nombre aléatoire entre 1 et 6 pour le joueur actuel
+      var roll = déLancé();
+      player2TotalScore += roll;
+      champPlayer2Scoreround.textContent = player2TotalScore;
+      if (player2TotalScore >= 100) {
+        alert("c'est le tour" + "  " + premierJoueur);
+
+        playButton1.addEventListener("click", function () {
+          déLancé();
+          player1TotalScore += roll;
+          champPlayer1Scoreround.textContent = player1TotalScore;
+          limite1sup100(); // lorsque la valeur sera =<100 pourle joueur 2
+          return player1TotalScore;
+        });
+      }
+      return roll;
+    });
+  }
+});
+// --------------------------------------fontions----------------------------------------
+let limite1sup100 = function limite1sup100(player1TotalScore) {
+  if (player1TotalScore >= 100) {
+    alert("c'est le tour" + "  " + deuxiemeJoueur);
+
+    playButton2.addEventListener("click", function () {
+      déLancé();
+      player2TotalScore += roll;
+      champPlayer2Scoreround.textContent = player2TotalScore;
+      limite2sup100();
+    });
+  }
 
   return roll;
+};
 
+let limite2sup100 = function limite2sup100(player2TotalScore) {
+  if (player2TotalScore >= 100) {
+    alert("c'est le tour" + "  " + premierJoueur);
 
-});
+    playButton1.addEventListener("click", function () {
+      déLancé();
+      player1TotalScore += roll;
+      champPlayer1Scoreround.textContent = player1TotalScore;
+      limite1sup100();
+    });
+  }
 
-
-
-
-
-
-// playButton.addEventListener("click", function rollDice(joueurActif1,joueurActif2) {
-//   // Générer un nombre aléatoire entre 1 et 6 pour le joueur actuel
-//   var roll = déLancé();
-//   conditionJoueur(joueurActif1,joueurActif1);
-//   return  roll  ;
-// });
-
-
+  return roll;
+};

@@ -22,7 +22,7 @@ const holdButton = document.getElementById("hold-button");
 // Écouter les événements de clic sur les boutons
 newGameButton.addEventListener("click", newGame);
 rollDiceButton.addEventListener("click", rollDice);
-holdButton.addEventListener("click", hold);
+holdButton.addEventListener("click", hold());
 
 // Fonction pour lancer un nouveau jeu
 function newGame() {
