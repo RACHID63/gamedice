@@ -86,6 +86,8 @@ tirageJoueur.addEventListener("click", function () {
   let deuxiemeJoueur = players[(premierJoueurIndex + 1) % players.length];
   document.getElementById("namePlayer1").value = premierJoueur;
   document.getElementById("namePlayer2").value = deuxiemeJoueur;
+  messageTapis = document.getElementById("tapisMesssage")
+  messageTapis.textContent = premierJoueur
   alert("Le joueur tiré au sort est : " + premierJoueur);
 
   if (premierJoueurIndex == 0) {
@@ -100,22 +102,13 @@ tirageJoueur.addEventListener("click", function () {
       player1TotalScore += roll;
       champPlayer1Scoreround.textContent = player1TotalScore;
       if (player1TotalScore >= 100) {
-
         alert("c'est le tour" + "  " + deuxiemeJoueur);
-
-        playButton2.addEventListener("click", function () {
-          déLancé();
-          player2TotalScore += roll;
-          champPlayer2Scoreround.textContent = player2TotalScore;
-          limite2sup100(); // lorsque la valeur sera =<100 pourle joueur 2
-          return player2TotalScore;
-        });
+        clickBouton2();
       }
 
       return roll;
     });
-  }
-  else if  (premierJoueurIndex == 1) {
+  } else if (premierJoueurIndex == 1) {
     alert(
       deuxiemeJoueur + "  " + "click sur lancé dé pour commencer la partie  "
     );
@@ -128,15 +121,9 @@ tirageJoueur.addEventListener("click", function () {
       if (player2TotalScore >= 100) {
         alert("c'est le tour" + "  " + premierJoueur);
 
-        playButton1.addEventListener("click", function () {
-          déLancé();
-          player1TotalScore += roll;
-          champPlayer1Scoreround.textContent = player1TotalScore;
-          limite1sup100(); // lorsque la valeur sera =<100 pourle joueur 2
-          return player1TotalScore;
-        });
+        clickBouton1();
       }
-      return roll;
+      return [player1TotalScore, player2TotalScore];
     });
   }
 });
@@ -145,12 +132,7 @@ let limite1sup100 = function limite1sup100(player1TotalScore) {
   if (player1TotalScore >= 100) {
     alert("c'est le tour" + "  " + deuxiemeJoueur);
 
-    playButton2.addEventListener("click", function () {
-      déLancé();
-      player2TotalScore += roll;
-      champPlayer2Scoreround.textContent = player2TotalScore;
-      limite2sup100();
-    });
+    clickBouton2();
   }
 
   return roll;
@@ -160,13 +142,28 @@ let limite2sup100 = function limite2sup100(player2TotalScore) {
   if (player2TotalScore >= 100) {
     alert("c'est le tour" + "  " + premierJoueur);
 
-    playButton1.addEventListener("click", function () {
-      déLancé();
-      player1TotalScore += roll;
-      champPlayer1Scoreround.textContent = player1TotalScore;
-      limite1sup100();
-    });
+    clickBouton1();
   }
 
   return roll;
+};
+
+clickBouton1 = function clickbouton1() {
+  playButton1.addEventListener("click", function () {
+    déLancé();
+    player1TotalScore += roll;
+    champPlayer1Scoreround.textContent = player1TotalScore;
+    limite1sup100();
+    return player1TotalScore;
+  });
+};
+
+clickBouton2 = function clickbouton2() {
+  playButton2.addEventListener("click", function () {
+    déLancé();
+    player2TotalScore += roll;
+    champPlayer2Scoreround.textContent = player2TotalScore;
+    limite2sup100();
+    return player2TotalScore;
+  });
 };
