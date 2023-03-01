@@ -263,12 +263,21 @@ h1 {
   margin-left: 25rem;
 }
 
+
+
+.text-color1 {
+  color: rgb(204, 84, 0);
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+}
+
 #tapisdécoration {
+  background: url(./images/decoration.svg) no-repeat center/98%;
   position: relative;
   top: 0px;
   display: flex;
   justify-content: center;
   background-color: green;
+  height: 50vh;
   width: 25vw;
   border-radius: 25px;
 }
