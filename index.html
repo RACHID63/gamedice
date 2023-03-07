@@ -1,64 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
-    <title>Jeux de dés à deux joueurs</title>
-</head>
-<body >
-    <div class="container corpsJeu">
-        <div class=" row  boxResultat d-flex justify-content-center align-items-center">
-            <div class=" border mt-3 col-md-6 player-panel active" id="joueur1">
-                <h2 class="text-light  text-center">Joueur 1</h2>
-                <div class="row">
-                    <div class="text-light col-md-6 bg-danger ">
-                        <h3>Score global</h3>
-                        <p class="score" id="score-0">0</p>
-                    </div>
-                    <div class="text-light col-md-6 bg-info">
-                        <h3>Score actuel</h3>
-                        <p class="text-light round-score boxCurrent " id="current-0">0</p>
-                    </div>
-                </div>
-            </div>
-            <div class="text-light  border mb-3 col-md-6 player-panel round-score" id="joueur2">
-                <h2 class="  text-center">Joueur 2</h2>
-                <div class="row">
-                    <div class="text-light  col-md-6 round-score bg-danger">
-                        <h3>Score global</h3>
-                        <p class="score" id="score-1">0</p>
-                    </div>
-                    <div class="text-light col-md-6 round-score bg-info">
-                        <h3>Score actuel</h3>
-                        <p class="text-light round-score boxCurrent " id="current-1">0</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div>
-            
-        </div>
-        <div class="row bg-success  d-flex justify-content-center align-items-center" style="height: 265px;width: 825px;">
-            <div class="m-0 col-md-6 offset-md-3 dice-container  ">
-                <img src="./image/dice.jpg" class="dice">
-                <div class="dice-result"></div>
-            </div>
-        </div>
 
-        <div class="bordered-5  row  bg-danger"  style="height:100px;width: 825px;"  >
-            <button class="btn btn-primary btn-new">Nouvelle partie</button>
-            <button class="btn btn-primary btn-roll">Lancer le dé</button>
-            <button class="btn btn-primary btn-hold">Valider</button>
-            <div class="row">
-               
-            </div>
-           
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <title>Jeux de dés à deux joueurs</title>
+</head>
+
+<body>
+  <div class="container corpsJeu">
+    <div class="row boxResultat d-flex justify-content-center align-items-center">
+      <div class="border mt-3 col-md-6 player-panel active" id="joueur1">
+        <h2 class="text-light text-center">Joueur 1</h2>
+        <div class="row">
+          <div class="text-light col-md-6 bg-danger">
+            <h3>Score global</h3>
+            <p class="score" id="score-0">0</p>
+          </div>
+          <div class="text-light col-md-6 bg-info">
+            <h3>Score actuel</h3>
+            <p class="text-light round-score boxCurrent" id="current-0">0</p>
+          </div>
         </div>
-        
+      </div>
+      <div class="text-light border mb-3 col-md-6 player-panel round-score" id="joueur2">
+        <h2 class="text-center">Joueur 2</h2>
+        <div class="row">
+          <div class="text-light col-md-6 round-score bg-danger">
+            <h3>Score global</h3>
+            <p class="score" id="score-1">0</p>
+          </div>
+          <div class="text-light col-md-6 round-score bg-info">
+            <h3>Score actuel</h3>
+            <p class="text-light round-score boxCurrent" id="current-1">0</p>
+          </div>
+        </div>
+      </div>
     </div>
+    <div>
+    </div>
+    <div class=" tapis bg-light row bg-success d-flex justify-content-center align-items-center" style="height: 265px;width: 825px;">
+      <div class="m-0 col-md-6 offset-md-3 dice-container ">
+        <img src="./image/dice.jpg" class="dice" style="width: 180px; height: 100px;">
+        <div class="dice-result"></div>
+      </div>
+    </div>
+
+    <div class="footer bordered-5 row bg-danger" style="height:100px;width: 825px;">
+      <button class="btn btn-primary btn-new">Nouvelle partie</button>
+      <button class="btn btn-primary btn-roll">Lancer le dé</button>
+      <button class="btn btn-primary btn-hold">Hold</button>
+      <div class="row  ">
+        <label for="final-score" class="col-2  text-light mr-2 mt-2">Score Final:</label> 
+        <input type="text" id="final-score" class=" col-6 form-control mr-2 mt-2 final-score" >
+      </div>
+    </div>
+  </div>
     
     <script src="app.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
