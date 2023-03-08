@@ -11,7 +11,26 @@
 </head>
 
 <body>
+ 
+  
   <div class="container corpsJeu">
+    <nav class="navbar-expand-md   bg-warning  navbar navbar-expand-md navbar-dark  ">
+      <a class="text-dark navbar-brand" href="#">Dice Game</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="text-dark nav-link" href="#">Game rules</a>
+          </li>
+          <li class="nav-item">
+            <a class="text-dark nav-link" href="#">Keyboard commands</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
     <div class="row boxResultat d-flex justify-content-center align-items-center">
       <div class="border mt-3 col-md-6 player-panel active" id="joueur1">
         <h2 class="text-light text-center">Joueur 1</h2>
@@ -53,7 +72,8 @@
       <button class="btn btn-primary btn-new">Nouvelle partie</button>
       <button class="btn btn-primary btn-roll">Lancer le dé</button>
       <button class="btn btn-primary btn-hold">Hold</button>
-      <div class="row  ">
+      <div class="row  " style="
+      width: 224px;" >
         <label for="final-score" class="col-2  text-light mr-2 mt-2">Score Final:</label> 
         <input type="text" id="final-score" class=" col-6 form-control mr-2 mt-2 final-score" >
       </div>

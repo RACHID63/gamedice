@@ -106,3 +106,11 @@ document.addEventListener('keypress', function (event) {
     rollDice();
   }
 });
+
+document.querySelector('.btn-hold').addEventListener('click', hold);
+
+document.addEventListener('keypress', function(event) {
+  if (event.key === 13 || event.which === 13) {
+    hold();
+  }
+});
