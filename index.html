@@ -1,88 +1,289 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./firework.css" />
+    <title>Jeux de dés à deux joueurs</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="style.css">
-  <title>Jeux de dés à deux joueurs</title>
-</head>
-
-<body>
- 
-  
-  <div class="container corpsJeu">
-    <nav class="navbar-expand-md   bg-warning  navbar navbar-expand-md navbar-dark  ">
-      <a class="text-dark navbar-brand" href="#">Dice Game</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="text-dark nav-link" href="#">Game rules</a>
-          </li>
-          <li class="nav-item">
-            <a class="text-dark nav-link" href="#">Keyboard commands</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-
-    <div class="row boxResultat d-flex justify-content-center align-items-center">
-      <div class="border mt-3 col-md-6 player-panel active" id="joueur1">
-        <h2 class="text-light text-center">Joueur 1</h2>
-        <div class="row">
-          <div class="text-light col-md-6 bg-danger">
-            <h3>Score global</h3>
-            <p class="score" id="score-0">0</p>
+  <body>
+    <!-- --------------------------modal règles du jeux --------------------------------- -->
+    <div
+      class="modal fade"
+      id="gameRulesModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="gameRulesModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-danger" id="gameRulesModalLabel">
+              Règles du jeu
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
           </div>
-          <div class="text-light col-md-6 bg-info">
-            <h3>Score actuel</h3>
-            <p class="text-light round-score boxCurrent" id="current-0">0</p>
+          <div class="modal-body">
+            <p>
+              Le jeu comprend 2 joueurs sur un seul et même écran. Chaque joueur
+              possède un score temporaire (ROUND) et un score global (GLOBAL).
+            </p>
+            <p>
+              À chaque tour, le joueur a son ROUND initialisé à 0 et peut lancer
+              un dé autant de fois qu'il le souhaite. Le résultat d’un lancer
+              est ajouté au ROUND.
+            </p>
+            <p>Lors de son tour, le joueur peut décider à tout moment de:</p>
+            <ul>
+              <li>
+                Cliquer sur l’option “Hold”, qui permet de garder les points du
+                ROUND et de passer le tour de l’autre joueur.
+              </li>
+              <li>
+                Lancer le dé. S’il obtient un 1, son score ROUND est perdu et
+                c’est la fin de son tour.
+              </li>
+            </ul>
+            <p>
+              Le premier joueur qui atteint les 100 points sur global gagne le
+              jeu.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary bg-danger"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
           </div>
         </div>
       </div>
-      <div class="text-light border mb-3 col-md-6 player-panel round-score" id="joueur2">
-        <h2 class="text-center">Joueur 2</h2>
-        <div class="row">
-          <div class="text-light col-md-6 round-score bg-danger">
-            <h3>Score global</h3>
-            <p class="score" id="score-1">0</p>
+    </div>
+    <!-- --------------------------modal règles du jeux --------------------------------- -->
+    <!-- --------------------------modal commande clavier--------------------------------- -->
+    <div
+      class="modal fade"
+      id="gamkeyboardCommandsModaleRulesModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="keyboardCommandsModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h6
+              class="modal-title fs-6 font-weight-bold"
+              id="keyboardCommandsModalLabel"
+            >
+              Commandes clavier
+            </h6>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
           </div>
-          <div class="text-light col-md-6 round-score bg-info">
-            <h3>Score actuel</h3>
-            <p class="text-light round-score boxCurrent" id="current-1">0</p>
+          <div class="modal-body">
+            <p class="fs-6">
+              1 bouton Nouvelle partie initialise le jeu met les variables à
+              zéro
+            </p>
+            <p class="fs-6">1 bouton Lancé Dé pour débuter la partie</p>
+            <p class="fs-6">1 bouton Hold pour stock la valeure tirée</p>
+            <p class="fs-6">
+              1 champ imput pour fixer la limite du jeu par défaut elle est
+              fixée à 100
+            </p>
+            <p>
+              Après avoir clické sur le bouton Lancer Dé, vous pouvez jouer au
+              clavier
+            </p>
+            <p>
+              bouton Lancer Dé
+              <span class="ml-3 bg-warning text-danger fs-6 font-weight-bold"
+                >"barre d’espace"</span
+              >
+            </p>
+            <p>
+              bouton Hold touche<span
+                class="ml-3 bg-warning text-white text-danger fs-6 font-weight-bold"
+              >
+                "entré"</span
+              >
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary bg-danger"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
           </div>
         </div>
       </div>
     </div>
-    <div>
-    </div>
-    <div class=" tapis bg-light row bg-success d-flex justify-content-center align-items-center" style="height: 265px;width: 825px;">
-      <div class="m-0 col-md-6 offset-md-3 dice-container ">
-        <img src="./image/dice.jpg" class="dice" style="width: 180px; height: 100px;">
-        <div class="dice-result"></div>
+    <!-- --------------------------modal commande clavier--------------------------------- -->
+
+    <div class="container corpsJeu">
+      <nav
+        class="navbar-expand-xs bg-warning navbar navbar-expand-md navbar-dark"
+      >
+        <a class="text-dark navbar-brand" href="#">Jeu de Dé</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a
+                class="text-dark nav-link"
+                href="#"
+                data-toggle="modal"
+                data-target="#gameRulesModal"
+                >Règles du jeu</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="text-dark nav-link"
+                href="#"
+                data-toggle="modal"
+                data-target="#gamkeyboardCommandsModaleRulesModal"
+                >Commandes et clavier</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div
+        class="row boxResultat d-flex justify-content-center align-items-center"
+      >
+        <div
+          class="border mt-3 col-md-6 player-panel active"
+          id="joueur1"
+          style="height: 200px"
+        >
+          <h2 class="text-light text-center">Joueur 1</h2>
+          <div class="row">
+            <div class="text-light col-md-6 bg-danger">
+              <h3>Score global</h3>
+              <p class="score" id="score-0">0</p>
+            </div>
+            <div class="text-light col-md-6 bg-info">
+              <h3>Score actuel</h3>
+              <p class="text-light round-score boxCurrent" id="current-0">0</p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="text-light border mb-3 col-md-6 player-panel round-score"
+          id="joueur2"
+          style="height: 200px"
+        >
+          <h2 class="text-center">Joueur 2</h2>
+          <div class="row">
+            <div class="text-light col-md-6 round-score bg-danger">
+              <h3>Score global</h3>
+              <p class="score" id="score-1">0</p>
+            </div>
+            <div class="text-light col-md-6 round-score bg-info">
+              <h3>Score actuel</h3>
+              <p class="text-light round-score boxCurrent" id="current-1">0</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div></div>
+      <div
+        class="tapis bg-light row bg-success d-flex justify-content-center align-items-center"
+        style="height: 200px; width: 825px"
+      >
+        <div class="m-0 col-md-6 offset-md-3 dice-container">
+          <img
+            src="./image/dice.jpg"
+            class="dice"
+            style="width: 180px; height: 100px"
+          />
+          <div class="dice-result"></div>
+        </div>
+        <div class="firework">
+          <canvas id="canvas"></canvas>
+        </div>
       </div>
     </div>
 
-    <div class="footer bordered-5 row bg-danger" style="height:100px;width: 825px;">
-      <button class="btn btn-primary btn-new">Nouvelle partie</button>
-      <button class="btn btn-primary btn-roll">Lancer le dé</button>
-      <button class="btn btn-primary btn-hold">Hold</button>
-      <div class="row  " style="
-      width: 224px;" >
-        <label for="final-score" class="col-2  text-light mr-2 mt-2">Score Final:</label> 
-        <input type="text" id="final-score" class=" col-6 form-control mr-2 mt-2 final-score" >
+    <div class="container corpsJeu" >
+
+      <div
+        class="row footer bordered-5 bg-danger"
+        style="height: 100px; width: 825px"
+      >
+        <button class="btn btn-primary btn-new">Nouvelle partie</button>
+        <button class="btn btn-primary btn-roll">Lancer le dé</button>
+        <button class="btn btn-primary btn-hold">Hold</button>
+        <div
+          class="row d-flex justify-content-center align-items-center"
+          style="width: 224px"
+        >
+          <label for="final-score" class="col-2 text-light mr-2 mt-2"
+            >limite Score</label
+          >
+          <input
+            type="text"
+            id="final-score"
+            class="col-6 form-control mr-2 mt-2 final-score"
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 font-weight-bold">
+          <p class="font-weit-400">
+            <span>Commandes clavier</span>-----bouton Lancer Dé
+            <span class="text-danger">"barre d’espace"</span>-----bouton Hold
+            <span class="text-danger">"touche entré"</span>
+          </p>
+        </div>
       </div>
     </div>
-  </div>
-    
+
+
+    <script src="./jquery-3.6.3.js"></script>
+    <script src="firework.js"></script>
     <script src="app.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-</body>
+  </body>
 </html>

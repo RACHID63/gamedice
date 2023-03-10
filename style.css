@@ -12,6 +12,7 @@ nav {
 }
 
 body {
+  
   height: 100vh;
   flex-direction: column;
   justify-content: center;
@@ -53,10 +54,15 @@ body {
 }
 
 .tapis {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 200px;
   border-right: solid 3px;
   border-left: solid 3px;
   border-bottom: solid 1;
 }
+
+
 
 .footer {
   border-bottom: solid 1px;

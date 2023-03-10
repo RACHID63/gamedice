@@ -107,10 +107,39 @@ document.addEventListener('keypress', function (event) {
   }
 });
 
+// document.addEventListener('keydown', function(event) {
+//   gamePlaying = true;
+//   if (event.key === 32 && gamePlaying) {
+//     rollDice();
+//   }
+// });
+
+
 document.querySelector('.btn-hold').addEventListener('click', hold);
 
 document.addEventListener('keypress', function(event) {
   if (event.key === 13 || event.which === 13) {
     hold();
   }
+});
+
+// $(document).ready(function() {
+//   $(".nav-link").click(function() {
+//     $("#gameRulesModal").modal('show');
+//   });
+// });
+
+// $(document).ready(function() {
+//   $(".nav-link").click(function() {
+//     $("#gamkeyboardCommandsModaleRulesModal").modal('show');
+//   });
+// });
+$(document).ready(function() {
+  $(".nav-link").click(function() {
+    if ($(this).attr("gameRulesModal") === "#gameRulesModal") {
+      $("#firstModal").modal('show');
+    } else if ($(this).attr("gamkeyboardCommandsModaleRulesModal") === "#gamkeyboardCommandsModaleRulesModal") {
+      $("#secondModal").modal('show');
+    }
+  });
 });
