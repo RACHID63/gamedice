@@ -132,14 +132,6 @@ body {
   background-color: #3e8e41;
 }
 
-/* .btn-new:active,
-.btn-roll:active,
-.btn-hold:active {
-  background-color: #3e8e41;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
-} */
-
 .final-score {
   height: 16px;
   width: 150px;
