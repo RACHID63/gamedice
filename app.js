@@ -29,6 +29,14 @@ function nextPlayer() {
 
   document.querySelector(`#joueur1`).classList.toggle('active');
   document.querySelector(`#joueur2`).classList.toggle('active');
+  
+  if (activePlayer === 0) {
+    document.querySelector(`#joueurActif1`).style.backgroundColor = 'forestgreen';
+    document.querySelector(`#joueurActif2`).style.backgroundColor = '';
+  } else {
+    document.querySelector(`#joueurActif1`).style.backgroundColor = '';
+    document.querySelector(`#joueurActif2`).style.backgroundColor = 'forestgreen';
+  }
 }
 
 
@@ -107,13 +115,6 @@ document.addEventListener('keypress', function (event) {
   }
 });
 
-// document.addEventListener('keydown', function(event) {
-//   gamePlaying = true;
-//   if (event.key === 32 && gamePlaying) {
-//     rollDice();
-//   }
-// });
-
 
 document.querySelector('.btn-hold').addEventListener('click', hold);
 
@@ -123,17 +124,7 @@ document.addEventListener('keypress', function(event) {
   }
 });
 
-// $(document).ready(function() {
-//   $(".nav-link").click(function() {
-//     $("#gameRulesModal").modal('show');
-//   });
-// });
 
-// $(document).ready(function() {
-//   $(".nav-link").click(function() {
-//     $("#gamkeyboardCommandsModaleRulesModal").modal('show');
-//   });
-// });
 $(document).ready(function() {
   $(".nav-link").click(function() {
     if ($(this).attr("gameRulesModal") === "#gameRulesModal") {
