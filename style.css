@@ -138,7 +138,8 @@ body {
   margin: 20px auto;
   font-size: 1.2rem;
   padding: 10px;
-  border: 1px solid;
+  border: 0
+  px solid;
 }
 
 @media (max-width: 780px) {
@@ -275,5 +276,18 @@ body {
   .scoreActuel {
     display: none;
   }
+
+}
+
+@media (max-width: 844px) {
+  .round-score1 {
+    left: 8vw;
+    top: -3vh;
+  }
+
+ .roun-score0 {
+   left: 8vw;
+     top: -3vh;
+ }
 
 }
