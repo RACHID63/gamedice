@@ -8,6 +8,8 @@ function init() {
   activePlayer = 0;
   gamePlaying = true;
 
+  document.querySelector(`#joueur1`).style.backgroundColor = "forestgreen";
+  document.querySelector(`#joueur2`).style.backgroundColor = "";
   document.getElementById("score-0").textContent = "0";
   document.getElementById("score-1").textContent = "0";
   document.getElementById("current-0").textContent = "0";
