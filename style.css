@@ -163,10 +163,8 @@ body {
   }
 }
 
-
-@media screen and (max-width: 384px) and (max-width: 360px) and (orientation: landscape) {
-  element {
+@media screen and (max-width: 872px) and (max-width: 500px) and (orientation: landscape) {
+ body {
     scale: 0.45;
-}
-
+  }
 }
