@@ -138,8 +138,7 @@ body {
   margin: 5px auto;
   font-size: 1.2rem;
   padding: 10px;
-  border: 0
-  px solid;
+  border: 0 px solid;
 }
 
 @media (max-width: 780px) {
@@ -164,130 +163,10 @@ body {
   }
 }
 
-@media (max-width: 371px) {
-  .final-score {
-    position: relative;
-    top: -28px;
-    right: 25px;
-    color: black;
-  }
 
-  .btn-hold {
-    position: absolute;
-    top: 550px;
-    right: 1px;
-  }
-
-  .superFooter {
-    display: none;
-  }
-
-  .tapis {
-    background: size 100px;
-    height: 100px;
-  }
-
-  #canvas {
-    display: none;
-  }
+@media screen and (max-width: 384px) and (max-width: 360px) and (orientation: landscape) {
+  element {
+    scale: 0.45;
 }
-
-@media screen and (max-width: 996px) and (orientation: landscape) {
-  .boxResultat {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-  }
-
-
-  #joueur1,#joueur2, .joueur1,
-  .joueur2, .textJoueur   {
-    border: none;
-    width: 26vw;
-    height: 100px;
-    position: relative;
-    
-  }
-
-  #joueur1 {
-    color: black;
-    top: 90px;
-    left: 5vw;
-  }
-
-  #joueur2 {
-    top:102px;
-    right: -68px;
-  }
-
-  h2.textJoueur {
-    color: rgb(0, 0, 0);
-   
-  }
-
-  #canvas {
-    display: none;
-  }
-
-  .boxResultat {
-    height: 0px;
-  }
-
-  .btn-new,
-  .btn-roll, .btn-hold {
-    font-size: 1em;
-    width: 120px;
-    position: absolute;
-    /* top: 240px; */
-    top: 68vh;
-
-    
-  }
-
-  .btn-new {
-    width: 144px;
-    /* left: 83px; */
-    left: 10vw;
-
-  }
-
-  .btn-roll {
-    right: 10vw;
-  }
-
-  .final-score {
-
-    height: 35px;
-    position: absolute;
-    top: 3vh;
-    left: -2vw;
-  }
-
-  .btn-hold {
-    left: 42%;
-  }
-
-}
-
-@media screen and (max-width:1023px) and (orientation: landscape){
-  .tapis {
-    height: 128px;
-  }
-  .scoreActuel {
-    display: none;
-  }
-
-}
-
-@media (max-width: 844px) {
-  .round-score1 {
-    left: 8vw;
-    top: -3vh;
-  }
-
- .roun-score0 {
-   left: 8vw;
-     top: -3vh;
- }
 
 }
