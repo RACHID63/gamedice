@@ -4,6 +4,11 @@
   padding: 0;
 }
 
+html {
+  
+  scale: 0.7;
+}
+
 nav {
   border: solid 1px black;
   border-top-right-radius: 10px;
@@ -164,15 +169,16 @@ body {
 }
 
 @media screen and (max-width: 2280px) and (orientation: landscape) {
- body {
-    scale: 0.70;
+  html {
+  
+    scale: 1;
   }
-}
 
-@media screen and (max-width: 915px)  and (orientation: landscape) {
-  body {
-     scale: 0.40;
-   }
+@media screen and (max-width: 811px)  and (orientation: landscape) {
+  html {
+  
+    scale: 1px;;
+  }
  }
 
 @media screen and (max-width: 896px)  and (orientation: landscape) {
