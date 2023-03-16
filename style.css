@@ -163,11 +163,35 @@ body {
   }
 }
 
-@media screen and (max-width: 1000px) and (orientation: landscape) {
+@media screen and (max-width: 2280px) and (orientation: landscape) {
  body {
-    scale: 0.40;
+    scale: 0.70;
   }
 }
+
+@media screen and (max-width: 915px)  and (orientation: landscape) {
+  body {
+     scale: 0.40;
+   }
+ }
+
+@media screen and (max-width: 896px)  and (orientation: landscape) {
+  body {
+     scale: 0.40;
+   }
+ }
+
+@media screen and  (max-width: 640px) and (orientation: landscape) {
+  body {
+     scale: 0.40;
+   }
+ }
+
+ @media screen and  (max-width: 2960px) and (orientation: landscape) {
+  body {
+     scale: 1.6;
+   }
+ }
 
 @media screen and (max-width: 1000px) and (orientation: portrait) {
   body {
