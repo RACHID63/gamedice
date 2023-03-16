@@ -171,6 +171,6 @@ body {
 
 @media screen and (max-width: 1000px) and (orientation: portrait) {
   body {
-     scale: 0.80;
+     scale: 0.78;
    }
  }
