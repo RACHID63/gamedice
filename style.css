@@ -5,7 +5,6 @@
 }
 
 html {
-  
   scale: 0.7;
 }
 
@@ -146,61 +145,54 @@ body {
   border: 0 px solid;
 }
 
-@media (max-width: 780px) {
-  .final-score {
-    position: relative;
-    top: -26px;
-    right: 15px;
-    color: black;
-  }
-
-  .superFooter {
+@media (max-width: 360px) {
+  .final-score,
+  .superFooter,
+  #canvas {
     display: none;
   }
 
   .tapis {
-    background: size 100px;
+    background-size: 100px;
     height: 100px;
-  }
-
-  #canvas {
-    display: none;
   }
 }
 
 @media screen and (max-width: 2280px) and (orientation: landscape) {
   html {
-  
-    scale: 1;
+    transform: scale(1);
   }
+}
 
-@media screen and (max-width: 811px)  and (orientation: landscape) {
+@media screen and (max-width: 811px) and (orientation: landscape) {
   html {
-  
-    scale: 1px;;
+    transform: scale(0.75);
   }
- }
+}
 
-@media screen and (max-width: 896px)  and (orientation: landscape) {
+@media screen and (max-width: 896px) and (orientation: landscape) {
   body {
-     scale: 0.40;
-   }
- }
+    transform: scale(0.4);
+  }
+}
 
-@media screen and  (max-width: 640px) and (orientation: landscape) {
+@media screen and (max-width: 640px) and (orientation: landscape) {
+  html,
   body {
-     scale: 0.40;
-   }
- }
+    transform: scale(0.75);
+  }
+}
 
- @media screen and  (max-width: 2960px) and (orientation: landscape) {
+@media screen and (max-width: 2960px) and (orientation: landscape) {
   body {
-     scale: 1.6;
-   }
- }
+    transform: scale(0.5);
+  }
+}
 
 @media screen and (max-width: 1000px) and (orientation: portrait) {
+  html,
   body {
-     scale: 0.78;
-   }
- }
+    transform: scale(0.8);
+  }
+}
+
