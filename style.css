@@ -165,7 +165,7 @@ body {
 
 @media screen and (max-width: 1000px) and (orientation: landscape) {
  body {
-    scale: 0.42;
+    scale: 0.40;
   }
 }
 
