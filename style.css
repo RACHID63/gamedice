@@ -158,17 +158,34 @@ body {
   html {
     transform: scale(1);
   }
+  .final-score,
+  .superFooter,
+  #canvas {
+    display: none;
+  }
+
 }
 
 @media screen and (max-width: 811px) and (orientation: landscape) {
   html {
     transform: scale(0.75);
   }
+
+  .final-score,
+  .superFooter,
+  #canvas {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 896px) and (orientation: landscape) {
   body {
     transform: scale(0.4);
+  }
+  .final-score,
+  .superFooter,
+  #canvas {
+    display: none;
   }
 }
 
@@ -177,11 +194,21 @@ body {
   body {
     transform: scale(0.75);
   }
+  .final-score,
+  .superFooter,
+  #canvas {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 2960px) and (orientation: landscape) {
   body {
     transform: scale(0.5);
+  }
+  .final-score,
+  .superFooter,
+  #canvas {
+    display: none;
   }
 }
 
@@ -189,6 +216,12 @@ body {
   html,
   body {
     transform: scale(0.8);
+  }
+
+  .final-score,
+  .superFooter,
+  #canvas {
+    display: none;
   }
 }
 
